@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: bud
+    ports:
+      - "5432:5432"
+
+  sqlpad:
+    image: sqlpad/sqlpad
+    environment:
+      SQLPAD_ADMIN: "admin"
+      SQLPAD_ADMIN_PASSWORD: "admin"
+    ports:
+      - "3000:3000"
